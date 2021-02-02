@@ -4,10 +4,11 @@ import requests
 # import glob
 # path1 = "/6/*.txt"
 # for filename in glob.glob(path):
-textdata = open('333.txt').read()
+textdata = open('333.txt').read()#此处需要修改 333.txt为wiki要填的内容
+titlet = open('title.txt').read()#此处需要修改 title.txt为wiki要填的内容的位置的网站的名字空间
 
 
-f=open(r'cook.txt','r')
+f=open(r'cook.txt','r')#此处需要修改 cook.txt为你的cookies
 cookies={}
 for line in f.read().split(';'):  
     
@@ -59,8 +60,8 @@ CSRF_TOKEN = DATA['query']['tokens']['csrftoken']
 #关于此处的编辑语法可以参照你wiki的api.php
 PARAMS_3 = {
     "action": "edit", #此处需要修改
-    "title": "wiki的标题",#此处需要修改
-    "appendtext": "wiki要填的内容",#此处需要修改
+    "title": titlet,
+    "appendtext": textdata,
     "token": CSRF_TOKEN,
     "format": "json"
 }
