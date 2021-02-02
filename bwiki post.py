@@ -6,8 +6,20 @@ import requests
 # for filename in glob.glob(path):
 textdata = open('333.txt').read()#此处需要修改 333.txt为wiki要填的内容
 titlet = open('title.txt').read()#此处需要修改 title.txt为wiki要填的内容的位置的网站的名字空间
-
-
+###########################################################################
+#cookies说明
+#1. 先登入bilibili
+#2. 在瀏覽器找cookie, domain是bilibili.com
+   把下面這兩cookie記起來
+   1. SESSDATA
+   2. DedeUserID
+#3. 開AGA biliwiki, https://wiki.biligame.com/aga
+#4. 在瀏覽器找cookie, domain是wiki.biligame.com, Path是/aga
+   把下面這兩cookie記起來
+   1. gamecenter_wiki_session
+   2. gamecenter_wiki_UserID
+#5 cookies 之间请用分号隔开
+############################################################################
 f=open(r'cook.txt','r')#此处需要修改 cook.txt为你的cookies
 cookies={}
 for line in f.read().split(';'):  
